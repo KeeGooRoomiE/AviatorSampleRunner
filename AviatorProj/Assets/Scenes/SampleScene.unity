@@ -2178,8 +2178,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1295414637}
   - {fileID: 628383711}
+  - {fileID: 1295414637}
   - {fileID: 1912540863}
   - {fileID: 1000208480}
   - {fileID: 2073810362}
@@ -2310,7 +2310,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 570352242}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 792731165}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &570352242
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3132,8 +3144,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1979348016}
   - {fileID: 169345417}
+  - {fileID: 1979348016}
   - {fileID: 1830832857}
   - {fileID: 502795328}
   - {fileID: 1048657525}
@@ -5913,7 +5925,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1295414639}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 792731165}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1295414639
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6057,8 +6081,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 582437335}
   - {fileID: 1669070406}
+  - {fileID: 582437335}
   - {fileID: 1172956746}
   - {fileID: 692231295}
   - {fileID: 1965899779}
@@ -8746,10 +8770,10 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1943550812}
   - {fileID: 1198660495}
   - {fileID: 1272395463}
   - {fileID: 192380081}
-  - {fileID: 1943550812}
   - {fileID: 730129840}
   m_Father: {fileID: 938736977}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
