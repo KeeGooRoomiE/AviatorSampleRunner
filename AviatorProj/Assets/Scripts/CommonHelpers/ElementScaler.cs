@@ -6,6 +6,7 @@ public class ElementScaler : MonoBehaviour
     public float maxScale = 1f;     // Максимальный размер
     public float smoothSpeed = 5f;  // Скорость плавного изменения размера
     public float targetY = 0f;      // Конкретная точка по высоте, где объект достигает maxScale
+    public float scaleModifier = 1f;
 
     void Update()
     {
@@ -23,6 +24,6 @@ public class ElementScaler : MonoBehaviour
 
         // Плавное движение к целевому масштабу
         float smoothScale = Mathf.Lerp(transform.localScale.x, targetScale, Time.deltaTime * smoothSpeed);
-        transform.localScale = new Vector3(smoothScale, smoothScale, 1);
+        transform.localScale = new Vector3(smoothScale*scaleModifier, smoothScale, 1);
     }
 }
