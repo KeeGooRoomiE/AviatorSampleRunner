@@ -9,19 +9,18 @@ public class CloudBehaviour : MonoBehaviour
     public float waveSpeed = 4f; // Скорость волны
     public float waveAmplitude = 1f; // Базовая амплитуда волны
     private float waveDelay = 1f;
-    public float randomFlip;
-    private ElementScaler scaler;
+    public bool randomFlip;
 
     void Start()
     {
-        scaler = gameObject.GetComponent<ElementScaler>();
+        SpriteRenderer img = gameObject.GetComponent<SpriteRenderer>();
         // Устанавливаем случайную скорость волны с небольшой задержкой
         float endWave = Random.Range(waveSpeed - waveDelay, waveSpeed + waveDelay);
         waveSpeed = endWave;
 
         // Случайный поворот по оси X (зеркальное отражение)
-      randomFlip = Random.value > 0.5f ? 1 : -1; // Выбор направления
-      scaler.scaleModifier = randomFlip;
+      randomFlip = Random.value > 0.5f ? true : false; // Выбор направления
+      img.flipX = randomFlip;
     }
 
     void Update()
