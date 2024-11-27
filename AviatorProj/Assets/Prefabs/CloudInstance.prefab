@@ -112,7 +112,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b115ae07a3db4271b1ef960a46121d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minScale: 0.6
+  minScale: 0.5
   maxScale: 1
   smoothSpeed: 5
   targetY: 3
@@ -128,6 +128,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3f9f738fc3b342f6a92123dc9ad9498, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 0.2
-  waveSpeed: 3
+  moveSpeed: 0.75
+  waveSpeed: 4
   waveAmplitude: 0.65
+  randomFlip: 0

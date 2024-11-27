@@ -14,17 +14,21 @@ public class GameController : MonoBehaviour
     public float coinSpawnRate = 1f;
     public float cloudSpawnRate = 3f;
     public float mntSpawnRate = 9f;
+    public float birdSpawnRate = 7f;
     public Vector2 spawnRange = new Vector2(-0.5f, 0.5f);
     public float spawnHeight = 1.5f;
     public float spawnOffscreenHeight = 6f;
     public Vector2 spawnHorRange = new Vector2(-2f, 2f);
     public Vector2 spawnMtnRange = new Vector2(-1f, 1f);
+    public float spawnSide = 3f;
+    public Vector2 greenHillHeight = new Vector2(1.5f, 3f);
     
     public static bool isDay = true;
 
     [SerializeField] private GameObject coinInst;
     [SerializeField] private GameObject cloudInst;
     [SerializeField] private GameObject mntInst;
+    [SerializeField] private GameObject birdInst;
     
     void Awake()
     {
@@ -39,6 +43,7 @@ public class GameController : MonoBehaviour
         InvokeRepeating(nameof(SpawnCoin), 0f, coinSpawnRate); // Запускаем таймер генерации
         InvokeRepeating(nameof(SpawnCloud), 0f, cloudSpawnRate); // Запускаем таймер генерации
         InvokeRepeating(nameof(SpawnMountain), 0f, mntSpawnRate); // Запускаем таймер генерации
+        InvokeRepeating(nameof(SpawnBird), 0f, birdSpawnRate); // Запускаем таймер генерации
     }
     // Update is called once per frame
     void Update()
@@ -66,6 +71,13 @@ public class GameController : MonoBehaviour
         float randomX = Random.Range(spawnMtnRange.x, spawnMtnRange.y); // Случайная позиция по X
         Vector3 spawnPosition = new Vector3(randomX, spawnHeight, 0); // Позиция спавна
         Instantiate(mntInst, spawnPosition, Quaternion.identity); // С
+    }
+    private void SpawnBird()
+    {
+        float randomY = Random.Range(greenHillHeight.x, greenHillHeight.y); // Случайная позиция по X
+        float randomX = Random.value > 0.5f ? -3f : 3f;
+        Vector3 spawnPosition = new Vector3(randomX, randomY, 0); // Позиция спавна
+        Instantiate(birdInst, spawnPosition, Quaternion.identity); // С
     }
 
     public static void IncrementCoin()

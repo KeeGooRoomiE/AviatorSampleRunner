@@ -34,7 +34,7 @@ public class PlaneTouchControl : MonoBehaviour
 
             // Ограничиваем самолет в пределах экрана
             touchPosition.x = Mathf.Clamp(touchPosition.x, -screenBounds.x, screenBounds.x);
-            touchPosition.y = Mathf.Clamp(touchPosition.y, -5f, -2.75f);
+            touchPosition.y = Mathf.Clamp(touchPosition.y, -5f, -2.7f);
 
             // Плавное перемещение к позиции пальца
             transform.position = Vector3.Lerp(transform.position, touchPosition, moveSpeed * Time.deltaTime);

@@ -29,4 +29,12 @@ public class BirdBehaviour : MonoBehaviour
         // Движение вниз
         transform.Translate(Vector3.down * (1f * Time.deltaTime));
     }
+    
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Player")) // Проверяем, столкнулся ли игрок
+        {
+            Debug.Log("BIRD!!!!");
+        }
+    }
 }
