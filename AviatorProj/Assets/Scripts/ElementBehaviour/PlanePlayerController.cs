@@ -4,9 +4,13 @@ public class PlaneTouchControl : MonoBehaviour
 {
     public float moveSpeed = 1f; // Скорость перемещения
     public Vector2 screenBounds; // Ограничения по экрану (зададим автоматически)
+    public float waveFrequency = 4f; // Частота покачивания
+    public float waveAmplitude = 5f; // Амплитуда покачивания
+    public float rotationSpeed = 10f; // Скорость поворота для покачивания
 
     private Camera mainCamera;
     private Transform plane;
+    private bool isMoving = false; // Флаг для отслеживания движения
 
     void Start()
     {
@@ -34,6 +38,28 @@ public class PlaneTouchControl : MonoBehaviour
 
             // Плавное перемещение к позиции пальца
             transform.position = Vector3.Lerp(transform.position, touchPosition, moveSpeed * Time.deltaTime);
+
+            isMoving = true; // Самолет двигается
+        }
+        else
+        {
+            isMoving = false; // Если нет касания, значит, самолет не двигается
+        }
+
+        // Если самолет в движении, добавляем покачивание
+        if (isMoving)
+        {
+            // Волна на основе синуса для горизонтального покачивания
+            float wave = Mathf.Sin(Time.time * waveFrequency) * waveAmplitude;
+
+            // Применяем покачивание к углу поворота по оси Z
+            float targetRotation = wave;
+            transform.rotation = Quaternion.Euler(0, 0, targetRotation);
+        }
+        else
+        {
+            // Если самолет не двигается, сбрасываем его поворот
+            transform.rotation = Quaternion.Euler(0, 0, 0);
         }
     }
 }
