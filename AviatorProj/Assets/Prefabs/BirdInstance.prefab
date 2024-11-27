@@ -130,7 +130,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   randomFlip: 0
-  moveSpeed: 2
+  moveSpeed: 1.25
   lifetime: 5
 --- !u!70 &5875601905161157527
 CapsuleCollider2D:

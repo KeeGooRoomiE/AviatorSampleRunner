@@ -8,11 +8,12 @@ public class CloudBehaviour : MonoBehaviour
     public float moveSpeed = 0.2f; // Скорость движения вниз
     public float waveSpeed = 4f; // Скорость волны
     public float waveAmplitude = 1f; // Базовая амплитуда волны
-    private float waveDelay = 1f;
+    private float waveDelay;
     public bool randomFlip;
 
     void Start()
     {
+        waveDelay = waveSpeed * 0.2f;
         SpriteRenderer img = gameObject.GetComponent<SpriteRenderer>();
         // Устанавливаем случайную скорость волны с небольшой задержкой
         float endWave = Random.Range(waveSpeed - waveDelay, waveSpeed + waveDelay);
