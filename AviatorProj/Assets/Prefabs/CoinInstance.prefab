@@ -151,6 +151,7 @@ MonoBehaviour:
   moveSpeed: 1
   waveSpeed: 2
   waveAmplitude: 0.2
+  sound: {fileID: 8300000, guid: 653688a894a72484dabd406c829993ef, type: 3}
 --- !u!114 &8853420989560025006
 MonoBehaviour:
   m_ObjectHideFlags: 0

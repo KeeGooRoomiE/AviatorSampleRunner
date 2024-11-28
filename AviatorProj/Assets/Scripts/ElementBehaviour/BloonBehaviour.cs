@@ -36,6 +36,7 @@ public class BloonBehaviour : MonoBehaviour
         if (other.CompareTag("Player")) // Проверяем, столкнулся ли игрок
         {
             Debug.Log("BLOON!!!!");
+            GameController.Instance.Lose();
         }
     }
 }

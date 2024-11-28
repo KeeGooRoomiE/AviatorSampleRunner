@@ -15,7 +15,7 @@ public class PlaneModalSelector : MonoBehaviour
     
     void Start()
     {
-        //planeNum = gameSettings.getPlaneNum();
+        planeNum = PlayerPrefs.GetInt("Plane", 0);
     }
 
     void Update()
@@ -33,6 +33,9 @@ public class PlaneModalSelector : MonoBehaviour
         {
             planeNum++;
         }
+        
+        PlayerPrefs.SetInt("Plane", planeNum);
+        PlayerPrefs.Save();
     }
 
     public void PrevItem()
@@ -45,6 +48,9 @@ public class PlaneModalSelector : MonoBehaviour
         {
             planeNum--;
         }
+        
+        PlayerPrefs.SetInt("Plane", planeNum);
+        PlayerPrefs.Save();
     }
     
 }

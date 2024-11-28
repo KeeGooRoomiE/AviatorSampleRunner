@@ -33,7 +33,7 @@ public class MountainBehaviour : MonoBehaviour
     {
         if (other.CompareTag("Player")) // Проверяем, столкнулся ли игрок
         {
-            Debug.Log("MOUNTAIN!!!!");
+            GameController.Instance.Lose();
         }
     }
 }

@@ -7,6 +7,7 @@ public class CoinBehaviour : MonoBehaviour
     public float moveSpeed = 1f; // Скорость движения вниз
     public float waveSpeed = 2f; // Скорость волны
     public float waveAmplitude = 0.5f; // Базовая амплитуда волны
+    public AudioClip sound;
 
     void Update()
     {
@@ -29,6 +30,23 @@ public class CoinBehaviour : MonoBehaviour
         if (other.CompareTag("Player")) // Проверяем, столкнулся ли игрок
         {
             GameController.IncrementCoin(); // Увеличиваем счет
+            if (PlayerPrefs.GetInt("SFX", 0) != 0)
+            {
+                AudioSource audioSource = GetComponent<AudioSource>();
+                if (audioSource == null)
+                {
+                    audioSource = gameObject.AddComponent<AudioSource>();
+                }
+
+                // Настройка AudioSource
+                audioSource.clip = sound;
+                audioSource.loop = false; // Включаем зацикливание
+                audioSource.playOnAwake = false; // Выключаем автозапуск
+
+                // Запуск музыки
+                audioSource.Play();
+            }
+
             Destroy(gameObject); // Удаляем монету
         }
     }

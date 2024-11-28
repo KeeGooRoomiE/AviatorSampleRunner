@@ -35,6 +35,7 @@ public class BirdBehaviour : MonoBehaviour
         if (other.CompareTag("Player")) // Проверяем, столкнулся ли игрок
         {
             Debug.Log("BIRD!!!!");
+            GameController.Instance.Lose();
         }
     }
 }

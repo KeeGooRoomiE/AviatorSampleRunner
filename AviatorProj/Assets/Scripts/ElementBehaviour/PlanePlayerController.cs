@@ -11,12 +11,19 @@ public class PlaneTouchControl : MonoBehaviour
     private Camera mainCamera;
     private Transform plane;
     private bool isMoving = false; // Флаг для отслеживания движения
+    private SpriteRenderer img;
+    public Sprite[] planeImgs;
 
     void Start()
     {
         mainCamera = Camera.main;
         plane = gameObject.transform;
+        img = gameObject.GetComponent<SpriteRenderer>();
+        
+        int planeNum =  PlayerPrefs.GetInt("Plane", 0);
 
+        img.sprite = planeImgs[planeNum];
+        
         // Автоматический расчет границ экрана
         screenBounds = mainCamera.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, mainCamera.transform.position.z));
     }
